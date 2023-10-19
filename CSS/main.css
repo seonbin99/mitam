@@ -1,0 +1,78 @@
+@charset "utf-8";
+
+@import url(reset.css);
+@import url(core.css);
+@import url(common.css);
+
+body{
+    background:
+        url(../images/main.png);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center center;
+    overflow-x: hidden;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+body::after{
+    content: '';
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    z-index: 9999999999;
+    animation: delCover 0.1s 6s forwards;
+}
+
+@keyframes delCover {
+    to{
+        height: 0;
+    }
+}
+
+.cont{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+    box-sizing: border-box;
+    padding-top: 20%;
+    overflow: hidden;
+}
+
+.dtxt{
+    width: auto;
+    height: auto;
+    opacity: 1;
+    flex: 2;
+
+}
+
+.dtxt2{
+    width: auto;
+    height: auto;           
+    opacity: 1;
+    flex: 3;
+}
+#dtxt,#dtxt2 {
+    width: 30vw;
+    opacity: 0;
+    animation: dtxtAni 3s ease-in-out forwards;
+}
+
+@keyframes dtxtAni {
+    to{
+        top: 0;
+        left: 0;
+        right: -75%;
+        opacity: 1;
+    }
+}
+
